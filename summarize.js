@@ -28,4 +28,5 @@ ${logData}
   return summary;
 }
 
-summarizeLog();
+// 👇 これが超重要！呼び出せるようにするための一文
+module.exports = summarizeLog;
