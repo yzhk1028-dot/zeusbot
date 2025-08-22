@@ -10,6 +10,9 @@ app.post("/webhook", (req, res) => {
   if (event && event.type === "message") {
     const logLine = `${new Date().toISOString()} | ${event.source.userId} | ${event.message.text}\n`;
     fs.appendFileSync("log.txt", logLine);
+
+    // 🔽 この行を追加！！
+    console.log("📩 受信メッセージ:", logLine);
   }
   res.sendStatus(200);
 });
